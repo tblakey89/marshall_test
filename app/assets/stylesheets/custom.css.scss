@@ -1,0 +1,407 @@
+$background: #f5f5f5;
+$header: #353535;
+$font: #333;
+$border: #999;
+$incomplete: #cdcdcd;
+$button_hover: #ccc;
+$error: red;
+$input_error: #ffcccc;
+$answered: #cedeff;
+$border-answered: #6699ff;
+$correct: #e3f4e3;
+$border-correct: #6ACD6A;
+$border-incorrect: #9F1919;
+$incorrect: #FFBBBB;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html{
+  background-color: $background;
+  height: 100%;
+  font-family: arial, helvetica, sans-serif;
+  color: $font;
+}
+
+body{
+  height: 100%;
+}
+
+header{
+  background-color: $header;
+  width: 100%;
+  height:80px;
+  box-shadow: 0px 10px 5px #888888;
+  z-index: 2;
+  h1 {
+    color: white;
+    font-size: 22px;
+    line-height: 20px;
+    height: 102px;
+    width: 85px;
+    margin: 0px;
+    background-color: #ccc;
+    margin-left: 40px;
+    padding: 10px 10px 0px 10px;
+  }
+}
+
+aside{
+  height: 100%;
+  width: 280px;
+  background-color: $header;
+  border-right: 2px $border solid;
+  @include box_sizing;
+  float: left;
+  h2 {
+    color: #ccc;
+    font-size: 16px;
+    margin-left: 20px;
+	margin-top: 20px;
+  }
+  .section_box{
+    @include box_sizing;
+    width: 230px;
+    margin: 20px;
+    background-color: $background;
+    height:80px;
+	cursor: pointer;
+    .section_status_incomplete{
+      background-color: $incomplete;
+      background-image: url(../images/incomplete.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 80px;
+      width: 80px;
+      border: $border 2px solid;
+      @include box_sizing;
+      float: left;
+    }
+	.section_status_complete{
+      background-color: $correct;
+      background-image: url(../images/complete.png);
+      background-repeat: no-repeat;
+      background-position: center center;
+      height: 80px;
+      width: 80px;
+      border: $border-correct 2px solid;
+      @include box_sizing;
+      float: left;
+    }
+    .section_contents{
+      float: left;
+      @include box-sizing;
+	  height: 80px;;
+	  border-right: 2px solid $border;
+	  border-top: 2px solid $border;
+	  border-bottom: 2px solid $border;
+	  width: 150px;
+	  h3{
+	  	font-size: 18px;
+	  }
+	  h3, h4{
+	  	margin: 10px;
+	  }
+	  h4.section_incomplete{
+	  	font-size: 12px;
+		color: red;
+	  }
+	  h4.section_complete{
+	  	font-size: 12px;
+		color: $border-correct;
+	  }
+    }
+  }
+}
+
+.container{
+  min-width: 800px;
+  max-width: 800px;
+  margin: 40px 20px;
+  float: left;
+  @include box_sizing;
+  .container_top{
+    background-color: $header;
+	height: 40px;
+	border-top: 2px $border solid;
+	border-left: 2px $border solid;
+	border-right: 2px $border solid;
+	h3{
+	  color: #ccc;
+      font-size: 16px;
+      padding: 10px;
+	}
+  }
+  .container_contents{
+    padding: 20px;
+	border-top: 2px $border solid;
+	border-left: 2px $border solid;
+	border-right: 2px $border solid;
+	p{
+	  font-size: 18px;
+	}
+  }
+  .container_footer{
+  	background-color: $header;
+	height: 40px;
+	border: 2px $border solid;
+  }
+  a.test_button
+  {
+    padding: 10px;
+	border-radius: 3px;
+	background-color: $header;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	text-decoration: none;
+	max-width: 153px;
+	display: block;
+	margin: 10px auto 0px auto;
+	text-align: center;
+	&:hover
+	{
+	  background-color: $button_hover;
+	}
+  }
+}
+
+.sign_in_container{
+  min-width: 764px;
+  @include box_sizing;
+  border: 2px $border solid;
+  .sign_in_header{
+  	background-color: $header;
+	height: 40px;
+	border-bottom: 2px $border solid;
+	h4{
+	  color: #ccc;
+      font-size: 16px;
+      padding: 10px;
+	}
+  }
+  .sign_in_footer{
+  	background-color: $header;
+	height: 40px;
+	border-top: 2px $border solid;
+  }
+}
+
+form{
+  padding: 20px;
+  .field_line{
+    margin: 0px auto 0px auto;
+    label{
+      float: left;
+	  padding: 5px 0px 5px 0px;
+	}
+	.field_with_errors
+	{
+	  label
+	  {
+	    color: $error;
+	  }
+	  input
+	  {
+	    background-color: $input_error;
+	  }
+	}
+	input{
+	  float: right;
+	  padding: 5px;
+	  border-radius: 3px;
+	  border: 1px $border solid;
+	}
+	input[type=submit]{
+	  margin-left: 143px;
+	  float: none;
+	}
+	width: 400px;
+	margin-bottom: 10px;
+	height: 30px;
+  }
+  ul
+  {
+  	margin-bottom: 20px;
+	color: $error;
+  }
+}
+
+.answer{
+  box-sizing: border-box;
+  width: 760px;
+  margin: 20px 0px 20px 0px;
+  background-color: $background;
+  height: 100px;
+  cursor: pointer;
+  .answer_status_incomplete{
+    background-color: $incomplete;
+    background-image: url(../images/incomplete.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100%;
+    width: 100px;
+    border: $border 4px solid;
+    @include box_sizing;
+    float: left;
+  }
+  .answer_content{
+    float: left;
+    @include box-sizing;
+	height: 100%;
+	border-right: 4px solid $border;
+	border-top: 4px solid $border;
+	border-bottom: 4px solid $border;
+	width: 660px;
+	h3{
+	  font-size: 18px;
+	}
+	h3, h4{
+	  margin: 20px;
+	}
+  }
+}
+
+.answer.answer_status_answered{
+  
+  .answer_status_incomplete{
+    background-color: $answered;
+	border: 4px solid$border-answered;
+	background-image: url(../images/answered.png);
+  }
+  .answer_content{
+    border-right: 4px solid $border-answered;
+	border-top: 4px solid $border-answered;
+	border-bottom: 4px solid $border-answered;
+  }
+}
+
+.footer_sections{
+  height: 100px;
+  margin-bottom: 20px;
+  div{
+    width: 100px;
+	height: 100px;
+	@include box-sizing;
+	float: left;
+	cursor: pointer;
+	h6{
+	  margin-top: 15px;
+	  margin-left: 5px;
+	}
+	p{
+	  margin-top: 5px;
+	  margin-left: 15px;
+	  font-weight: bold;
+	  font-size: 10px;
+	}
+  }
+  .incomplete{
+    border-left: 2px solid $border;
+	border-top: 2px solid $border;
+	border-bottom: 2px solid $border;
+	color: $border;
+	background-color: $incomplete;
+	p{
+	  color: $error;
+	}
+  }
+  .complete{
+  	border-left: 2px solid $border-answered;
+	border-top: 2px solid $border-answered;
+	border-bottom: 2px solid $border-answered;
+	color: $border-answered;
+	background-color: $answered;
+  }
+  .last.incomplete{
+    border-right: 2px solid $border;
+  }
+  .last.complete{
+    border-right: 2px solid $border-answered;
+  }
+}
+
+.results{
+  .results_left{
+    float: left;
+	.correct, .incorrect{
+	  width: 300px;
+	  height: 50px;
+	  margin-bottom: 20px;
+	  .result{
+	    width: 100px;
+		height: 50px;
+		float: left;
+		display: table-cell;
+	  }
+	  .question_number{
+	    width: 198px;
+		height: 50px;
+		float: left;
+	  }
+	  p{
+	    line-height: 50px;
+		text-align: center;
+	  }
+	}
+	.correct{
+	  border: 2px solid $border-correct;
+	  .result{
+	    color: $border-correct;
+		border-right: 2px solid $border-correct;
+		background-color: $correct;
+	  }
+	}
+	.incorrect{
+	  border: 2px solid $border-incorrect;
+	  .result{
+	    color: $border-incorrect;
+		border-right: 2px solid $border-incorrect;
+		background-color: $incorrect;
+	  }
+	}
+  }
+  .results_right{
+    float: right;
+	width: 432px;
+	.outcomeFail{
+	  height: 197px;
+	  width: 428px;
+	  border: 2px solid $border-incorrect;
+	  background-image: url(../images/failed.png);
+	  background-color: $incorrect;
+	}
+	.outcomePass{
+	  height: 197px;
+	  width: 428px;
+	  border: 2px solid $border-correct;
+	  background-image: url(../images/pass.png);
+	  background-color: $correct;
+	}
+	p{
+	  text-align: center;
+	  margin-top: 20px;
+	}
+  }
+}
+
+.theEnd{
+  .outcomePass{
+    height: 197px;
+	  width: 428px;
+	  border: 2px solid $border-correct;
+	  background-image: url(../images/pass.png);
+	  background-color: $correct;
+	  margin: 0px auto 20px auto;
+  }
+  p{
+    text-align: center;
+  }
+}
+
+.clear{
+  clear:both;
+}

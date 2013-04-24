@@ -1,0 +1,30 @@
+<% provide(:title, 'Enter Details') %>
+<% provide(:heading, 'Enter Details') %>
+<% provide(:footer_class, "class=container_footer") %>
+
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages' %>
+  <div class="field_line">
+    <%= f.label :username %>
+    <%= f.text_field :username %>
+  </div>
+
+  <div class="field_line">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field_line">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+
+  <div class="field_line">
+    <%= f.label :password_confirmation, "Confirmation" %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+
+  <div class="field_line">
+    <%= f.submit "Begin Test" %>
+  </div>
+<% end %>

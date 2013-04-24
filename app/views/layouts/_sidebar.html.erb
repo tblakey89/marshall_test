@@ -1,0 +1,15 @@
+<aside>
+  <div ng-show="showCtrl(0)">
+  <h2>Sections</h2>
+  <div ng-repeat="i in [1,2,3,4,5]">
+    <div class="section_box">
+      <div class="section_status_{{sectionStatus(i)}}">
+      </div>
+      <div class="section_contents">
+        <h3>Section {{i}}</h3>
+        <h4 class="section_{{sectionStatus(i)}}">{{sectionStatus(i)}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+</aside>

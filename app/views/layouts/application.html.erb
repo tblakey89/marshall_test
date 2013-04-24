@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="Exam">
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+</head>
+<body <%= yield(:ng_controller) %>>
+  <%= render 'layouts/header' %>
+  <%= render 'layouts/sidebar' %>
+  <div class="container">
+    <div class="container_top">
+      <h3><%= yield(:heading)%></h3>
+    </div>
+    <div class="container_contents">
+      <%= yield %>
+    </div>
+    <div <%= yield(:footer_class) %>>
+      <% if defined? @exam %>
+        <%= render 'layouts/footer_sections' %>
+      <% end %>
+    </div>
+  </div>
+  <% flash.each do |key, value| %>
+  <div class="alert-<%= key %>"><%= value %></div>
+  <% end %>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<div ng-hide="endOfTest(0)" ng-class="videoWatched(0)">
+    <h6>Video</h6>
+    <p>{{videoWatched(0)}}</p>
+  </div>
+  <div ng-hide="endOfTest(0)" ng-repeat="t in [1,2,3,4,5,6]">
+    <div ng-class="answeredQuestion(t)" ng-click="goToQuestion(t)">
+      <h6>Question {{t}}</h6>
+      <p>{{answeredQuestion(t)}}</p>
+    </div>
+  </div>
+  <div ng-hide="endOfTest(0)" ng-class="sectionComplete(0)" class="last" ng-click="finishSection(0)">
+    <h6>Section</h6>
+    <p>{{sectionComplete(0)}}</p>
+  </div>

@@ -1,0 +1,29 @@
+<% provide(:title, "Sign In") %>
+<% provide(:heading, "Sign In") %>
+<div class="sign_in_container">
+  <div class="sign_in_header">
+    <h4>Sign In</h1>
+  </div>
+  <div class="sign_in_content">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+      <p>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+      </p>
+
+      <p>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </p>
+
+      <p>
+        <%= f.submit "Sign In" %>
+      </p>
+    <% end %>
+
+  </div>
+  <div class="sign_in_footer">
+  </div>
+</div>
+
+<%= link_to "Enter Information", new_user_path, :class => "test_button" %>

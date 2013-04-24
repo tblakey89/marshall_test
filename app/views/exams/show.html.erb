@@ -1,0 +1,72 @@
+<% provide(:title, @exam.name) %>
+<% provide(:heading, "{{name}}") %>
+<% provide(:ng_controller, 'ng-controller=ExamCtrl') %>
+<% provide(:footer_class, 'ng-class=footerClass(0)') %>
+
+<div ng-hide="begin">
+    <iframe id="iframeID" src="http://player.vimeo.com/video/" width="756" height="500" frameborder="0" webkitAllowFull    Screen mozallowfullscreen allowFullScreen></iframe>
+  <a href="#" class="test_button" ng-click="beginSection($event)">Proceed To Questions</a>
+  <div class="clear"></div>
+</div>
+<div ng-repeat="section in sections"  ng-class="testClass(section.name, section.video_id)">
+  <div ng-repeat="question in section.questions" ng-show="showQuestion(question.order)">
+    <p>{{question.question_text}}</p>
+    <div class="answer" ng-click="answerQuestion(question.order, 1)" ng-class="answered(question.order, 1)">
+      <div class="answer_status_incomplete"></div>
+      <div class="answer_content">
+        <h3>{{question.answer1}}</h3>
+      </div>
+    </div>
+    <div class="answer" ng-click="answerQuestion(question.order, 2)" ng-class="answered(question.order, 2)">
+      <div class="answer_status_incomplete"></div>
+      <div class="answer_content">
+        <h3>{{question.answer2}}</h3>
+      </div>
+    </div>
+    <div class="answer" ng-click="answerQuestion(question.order, 3)" ng-class="answered(question.order, 3)">
+      <div class="answer_status_incomplete"></div>
+      <div class="answer_content">
+        <h3>{{question.answer3}}</h3>
+      </div>
+    </div>
+    <div class="answer" ng-click="answerQuestion(question.order, 4)" ng-class="answered(question.order, 4)">
+      <div class="answer_status_incomplete"></div>
+      <div class="answer_content">
+        <h3>{{question.answer4}}</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="results" ng-show="showQuestion(7)">
+  <div class="results_left" ng-repeat="section in sections">
+    <div ng-repeat="question in section.questions" ng-class="answerCorrect(question.order, question.correct)">
+      <div class="result">
+        <p>{{answerCorrect(question.order, question.correct)}}</p>
+      </div>
+      <div class="question_number">
+        <p>Question {{question.order}}</p>
+      </div>
+    </div>
+  </div>
+  <div class="results_right">
+    <div ng-hide="sectionOutcome(0)">
+      <div class="outcomeFail">
+      </div>
+      <p>Unfortunately not all your answers were correct, click the button below to restart the section and to watch the video again!</p>
+      <a href="#" class="test_button" ng-click="repeatSection($event)">Repeat Section</a>
+    </div>
+    <div ng-show="sectionOutcome(0)">
+      <div class="outcomePass">
+      </div>
+      <p>Congratulations, you have completed the section! Please move onto the next section.</p>
+      <a href="#" class="test_button" ng-click="nextSection($event)">Next Section</a>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+<div class="theEnd" ng-show="endOfTest(0)">
+  <div class="outcomePass"></div>
+  <p>Congratulations, you have finished the test!</p>
+  <a href="/" class="test_button">End Test</a>
+</div>
