@@ -39,7 +39,7 @@ app = angular.module("Exam", ["ngResource"])
       return false
 
   $scope.goToQuestion = (id) ->
-    if $scope.video
+    if $scope.video and  $scope.begin isnt  7
       $scope.begin = id
 
   $scope.answerQuestion = (id, answer) ->

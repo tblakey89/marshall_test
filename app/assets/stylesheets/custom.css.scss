@@ -54,6 +54,7 @@ aside{
   width: 280px;
   background-color: $header;
   border-right: 2px $border solid;
+  box-shadow: inset 0px 10px 5px #222;
   @include box_sizing;
   float: left;
   h2 {
@@ -115,6 +116,10 @@ aside{
 	  }
     }
   }
+}
+
+.questionText{
+  height: 42px;
 }
 
 .container{
@@ -289,7 +294,7 @@ form{
 	float: left;
 	cursor: pointer;
 	h6{
-	  margin-top: 15px;
+	  margin-top: 28px;
 	  margin-left: 5px;
 	}
 	p{

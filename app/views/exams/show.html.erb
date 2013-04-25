@@ -10,7 +10,7 @@
 </div>
 <div ng-repeat="section in sections"  ng-class="testClass(section.name, section.video_id)">
   <div ng-repeat="question in section.questions" ng-show="showQuestion(question.order)">
-    <p>{{question.question_text}}</p>
+    <p class="questionText">{{question.question_text}}</p>
     <div class="answer" ng-click="answerQuestion(question.order, 1)" ng-class="answered(question.order, 1)">
       <div class="answer_status_incomplete"></div>
       <div class="answer_content">
@@ -35,7 +35,8 @@
         <h3>{{question.answer4}}</h3>
       </div>
     </div>
-    <a href="#" class="test_button" ng-click="next($event)">Next Question</a>
+    <a href="#" class="test_button" ng-hide="sectionCompleteBool(0)" ng-click="next($event)">Next Question</a>
+    <a href="#" class="test_button" ng-show="sectionCompleteBool(0)" ng-click="next($event)">Finish Section</a>
   </div>
 </div>
 
