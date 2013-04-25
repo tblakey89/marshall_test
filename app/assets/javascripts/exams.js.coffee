@@ -28,6 +28,10 @@ app = angular.module("Exam", ["ngResource"])
     $scope.video = true
     $event.preventDefault()
 
+  $scope.next = ($event) ->
+    $scope.begin = $scope.begin + 1
+    $event.preventDefault()
+
   $scope.showQuestion = (id) ->
     if id == $scope.begin
       return true
