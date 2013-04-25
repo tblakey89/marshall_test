@@ -80376,3 +80376,1622 @@ Processing by SectionsController#show as JSON
   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."remember_token" = '38JNZTZ1NuYGYIkq-5KqLg' LIMIT 1
   [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."section_id" = 1[0m
 Completed 200 OK in 4ms (Views: 2.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/exams" for 127.0.0.1 at 2013-04-24 23:31:33 +0100
+Processing by Admin::ExamsController#index as HTML
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "exams" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "exams" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "exams" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35mExam Load (0.2ms)[0m  SELECT "exams".* FROM "exams" ORDER BY "exams"."id" desc LIMIT 30 OFFSET 0
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (65.1ms)
+Completed 200 OK in 71ms (Views: 66.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-24 23:31:33 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-24 23:31:33 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/exams/1/edit" for 127.0.0.1 at 2013-04-24 23:31:38 +0100
+Processing by Admin::ExamsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT 1[0m  [["id", 1]]
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (34.9ms)
+Completed 200 OK in 40ms (Views: 36.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-24 23:31:38 +0100
+Served asset /active_admin.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-24 23:31:38 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/admin/sections" for 127.0.0.1 at 2013-04-24 23:32:00 +0100
+Processing by Admin::SectionsController#index as HTML
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "sections" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" ORDER BY "sections"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mExam Load (0.2ms)[0m  [1mSELECT "exams".* FROM "exams" [0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (165.5ms)
+Completed 200 OK in 169ms (Views: 166.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-24 23:32:00 +0100
+Served asset /active_admin.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-24 23:32:00 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/admin/sections/1/edit" for 127.0.0.1 at 2013-04-24 23:32:03 +0100
+Processing by Admin::SectionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" [0m
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (62.0ms)
+Completed 200 OK in 67ms (Views: 64.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-24 23:32:03 +0100
+Served asset /active_admin.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-24 23:32:03 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections/2/edit" for 127.0.0.1 at 2013-04-24 23:32:33 +0100
+Processing by Admin::SectionsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mExam Load (0.2ms)[0m  SELECT "exams".* FROM "exams" 
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (110.0ms)
+Completed 200 OK in 113ms (Views: 111.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-24 23:32:33 +0100
+Served asset /active_admin.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-24 23:32:33 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections" for 127.0.0.1 at 2013-04-24 23:33:01 +0100
+Processing by Admin::SectionsController#index as HTML
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "sections" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" ORDER BY "sections"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" [0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (174.1ms)
+Completed 200 OK in 179ms (Views: 175.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-24 23:33:01 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-24 23:33:01 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections/3/edit" for 127.0.0.1 at 2013-04-24 23:33:03 +0100
+Processing by Admin::SectionsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" [0m
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (61.3ms)
+Completed 200 OK in 66ms (Views: 63.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-24 23:33:03 +0100
+Served asset /active_admin.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-24 23:33:03 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections" for 127.0.0.1 at 2013-04-24 23:33:29 +0100
+Processing by Admin::SectionsController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "sections" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" ORDER BY "sections"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" 
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (157.5ms)
+Completed 200 OK in 161ms (Views: 158.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-24 23:33:29 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-24 23:33:29 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections/4/edit" for 127.0.0.1 at 2013-04-24 23:33:31 +0100
+Processing by Admin::SectionsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" 
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (60.8ms)
+Completed 200 OK in 71ms (Views: 62.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-24 23:33:31 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-24 23:33:31 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections/5/edit" for 127.0.0.1 at 2013-04-24 23:34:52 +0100
+Processing by Admin::SectionsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" [0m
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (59.2ms)
+Completed 200 OK in 63ms (Views: 60.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-24 23:34:52 +0100
+Served asset /active_admin.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-24 23:34:52 +0100
+Served asset /active_admin.css - 304 Not Modified (4ms)
+
+
+Started GET "/admin/sections/5/edit" for 127.0.0.1 at 2013-04-24 23:46:27 +0100
+Processing by Admin::SectionsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", "5"]]
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mExam Load (0.2ms)[0m  SELECT "exams".* FROM "exams" 
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (111.6ms)
+Completed 200 OK in 116ms (Views: 113.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-24 23:46:27 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-24 23:46:27 +0100
+Served asset /active_admin.css - 304 Not Modified (5ms)
+
+
+Started GET "/admin/sections/5/edit" for 127.0.0.1 at 2013-04-25 00:31:28 +0100
+Processing by Admin::SectionsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" [0m
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (67.7ms)
+Completed 200 OK in 72ms (Views: 69.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:31:28 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:31:28 +0100
+Served asset /active_admin.css - 304 Not Modified (5ms)
+
+
+Started GET "/admin/exams" for 127.0.0.1 at 2013-04-25 00:43:02 +0100
+Processing by Admin::ExamsController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "exams" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "exams" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "exams" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36mExam Load (0.2ms)[0m  [1mSELECT "exams".* FROM "exams" ORDER BY "exams"."id" desc LIMIT 30 OFFSET 0[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (133.7ms)
+Completed 200 OK in 137ms (Views: 135.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:43:02 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:43:02 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/exams/1/edit" for 127.0.0.1 at 2013-04-25 00:43:05 +0100
+Processing by Admin::ExamsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" WHERE "exams"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (32.0ms)
+Completed 200 OK in 36ms (Views: 33.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:43:05 +0100
+Served asset /active_admin.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:43:05 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections" for 127.0.0.1 at 2013-04-25 00:43:28 +0100
+Processing by Admin::SectionsController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "sections" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" ORDER BY "sections"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" 
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (156.7ms)
+Completed 200 OK in 161ms (Views: 158.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:43:28 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:43:28 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections/1/edit" for 127.0.0.1 at 2013-04-25 00:43:30 +0100
+Processing by Admin::SectionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", 1]]
+  [1m[35mExam Load (0.2ms)[0m  SELECT "exams".* FROM "exams" 
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (63.9ms)
+Completed 200 OK in 68ms (Views: 65.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:43:30 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:43:30 +0100
+Served asset /active_admin.css - 304 Not Modified (2ms)
+
+
+Started GET "/admin/sections/2/edit" for 127.0.0.1 at 2013-04-25 00:44:19 +0100
+Processing by Admin::SectionsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", 2]]
+  [1m[36mExam Load (0.2ms)[0m  [1mSELECT "exams".* FROM "exams" [0m
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (68.4ms)
+Completed 200 OK in 73ms (Views: 70.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:44:19 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:44:19 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/admin/sections" for 127.0.0.1 at 2013-04-25 00:44:38 +0100
+Processing by Admin::SectionsController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "sections" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" ORDER BY "sections"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" 
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (140.4ms)
+Completed 200 OK in 144ms (Views: 141.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:44:38 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:44:38 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections/3/edit" for 127.0.0.1 at 2013-04-25 00:44:39 +0100
+Processing by Admin::SectionsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", "3"]]
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" 
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (62.2ms)
+Completed 200 OK in 67ms (Views: 63.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:44:39 +0100
+Served asset /active_admin.css - 304 Not Modified (38ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:44:39 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started PUT "/admin/sections/3" for 127.0.0.1 at 2013-04-25 00:44:52 +0100
+Processing by Admin::SectionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8GaJl/hRXnQEWEb9O64gYPRF+Frc1n+SmoE9H/KjAOU=", "section"=>{"name"=>"Section 3 – VHC Report Call", "video_id"=>"64311296", "exam_id"=>"1", "order"=>"3"}, "commit"=>"Update Section", "id"=>"3"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSection Exists (0.2ms)[0m  [1mSELECT 1 FROM "sections" WHERE (LOWER("sections"."name") = LOWER('Section 3 – VHC Report Call') AND "sections"."id" != 3) LIMIT 1[0m
+  [1m[35mSection Exists (0.0ms)[0m  SELECT 1 FROM "sections" WHERE ("sections"."order" = 3 AND "sections"."id" != 3) LIMIT 1
+  [1m[36mSection Exists (0.1ms)[0m  [1mSELECT 1 FROM "sections" WHERE ("sections"."video_id" = '64311296' AND "sections"."id" != 3) LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/admin/sections/3
+Completed 302 Found in 15ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sections/3" for 127.0.0.1 at 2013-04-25 00:44:52 +0100
+Processing by Admin::SectionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", "3"]]
+  [1m[36mExam Load (0.2ms)[0m  [1mSELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = 'Section' AND "active_admin_comments"."resource_id" = '3' AND "active_admin_comments"."namespace" = 'admin'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = 'Section' AND "active_admin_comments"."resource_id" = '3' AND "active_admin_comments"."namespace" = 'admin'[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/show.html.arb (103.9ms)
+Completed 200 OK in 108ms (Views: 105.7ms | ActiveRecord: 0.7ms)
+
+
+Started PUT "/admin/sections/3" for 127.0.0.1 at 2013-04-25 00:44:52 +0100
+Processing by Admin::SectionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8GaJl/hRXnQEWEb9O64gYPRF+Frc1n+SmoE9H/KjAOU=", "section"=>{"name"=>"Section 3 – VHC Report Call", "video_id"=>"64311296", "exam_id"=>"1", "order"=>"3"}, "commit"=>"Update Section", "id"=>"3"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mSection Exists (0.1ms)[0m  [1mSELECT 1 FROM "sections" WHERE (LOWER("sections"."name") = LOWER('Section 3 – VHC Report Call') AND "sections"."id" != 3) LIMIT 1[0m
+  [1m[35mSection Exists (0.0ms)[0m  SELECT 1 FROM "sections" WHERE ("sections"."order" = 3 AND "sections"."id" != 3) LIMIT 1
+  [1m[36mSection Exists (0.1ms)[0m  [1mSELECT 1 FROM "sections" WHERE ("sections"."video_id" = '64311296' AND "sections"."id" != 3) LIMIT 1[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/admin/sections/3
+Completed 302 Found in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/sections/3" for 127.0.0.1 at 2013-04-25 00:44:52 +0100
+Processing by Admin::SectionsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", "3"]]
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = 'Section' AND "active_admin_comments"."resource_id" = '3' AND "active_admin_comments"."namespace" = 'admin'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = 'Section' AND "active_admin_comments"."resource_id" = '3' AND "active_admin_comments"."namespace" = 'admin'[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/show.html.arb (51.5ms)
+Completed 200 OK in 55ms (Views: 53.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:44:52 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:44:52 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections" for 127.0.0.1 at 2013-04-25 00:44:59 +0100
+Processing by Admin::SectionsController#index as HTML
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "sections" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" ORDER BY "sections"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mExam Load (0.2ms)[0m  [1mSELECT "exams".* FROM "exams" [0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (192.5ms)
+Completed 200 OK in 197ms (Views: 194.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:44:59 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:44:59 +0100
+Served asset /active_admin.css - 304 Not Modified (6ms)
+
+
+Started GET "/admin/sections/4/edit" for 127.0.0.1 at 2013-04-25 00:45:01 +0100
+Processing by Admin::SectionsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", "4"]]
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" [0m
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (68.0ms)
+Completed 200 OK in 72ms (Views: 69.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:45:01 +0100
+Served asset /active_admin.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:45:01 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections" for 127.0.0.1 at 2013-04-25 00:45:18 +0100
+Processing by Admin::SectionsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "sections" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "sections" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" ORDER BY "sections"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mExam Load (0.2ms)[0m  SELECT "exams".* FROM "exams" 
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (169.6ms)
+Completed 200 OK in 174ms (Views: 170.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:45:18 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:45:18 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections/5/edit" for 127.0.0.1 at 2013-04-25 00:45:22 +0100
+Processing by Admin::SectionsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", "5"]]
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" 
+  [1m[36mExam Load (0.1ms)[0m  [1mSELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (60.7ms)
+Completed 200 OK in 64ms (Views: 62.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:45:22 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:45:22 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/admin/questions" for 127.0.0.1 at 2013-04-25 00:45:37 +0100
+Processing by Admin::QuestionsController#index as HTML
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "questions" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "questions" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "questions" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions" ORDER BY "questions"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (305.6ms)
+Completed 200 OK in 309ms (Views: 306.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:45:37 +0100
+Served asset /active_admin.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:45:37 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/1/edit" for 127.0.0.1 at 2013-04-25 00:45:40 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (77.8ms)
+Completed 200 OK in 81ms (Views: 79.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:45:40 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:45:40 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/admin/questions" for 127.0.0.1 at 2013-04-25 00:46:17 +0100
+Processing by Admin::QuestionsController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "questions" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "questions" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "questions" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" 
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (255.5ms)
+Completed 200 OK in 259ms (Views: 255.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:46:18 +0100
+Served asset /active_admin.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:46:18 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/2/edit" for 127.0.0.1 at 2013-04-25 00:46:21 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (121.5ms)
+Completed 200 OK in 125ms (Views: 123.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:46:21 +0100
+Served asset /active_admin.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:46:21 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/3/edit" for 127.0.0.1 at 2013-04-25 00:47:00 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (78.6ms)
+Completed 200 OK in 82ms (Views: 80.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:47:00 +0100
+Served asset /active_admin.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:47:00 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/4/edit" for 127.0.0.1 at 2013-04-25 00:47:44 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "4"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (153.6ms)
+Completed 200 OK in 157ms (Views: 155.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:47:44 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:47:44 +0100
+Served asset /active_admin.css - 304 Not Modified (4ms)
+
+
+Started GET "/admin/questions" for 127.0.0.1 at 2013-04-25 00:48:16 +0100
+Processing by Admin::QuestionsController#index as HTML
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "questions" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "questions" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "questions" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" ORDER BY "questions"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (265.0ms)
+Completed 200 OK in 269ms (Views: 265.9ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/questions" for 127.0.0.1 at 2013-04-25 00:48:16 +0100
+Processing by Admin::QuestionsController#index as HTML
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "questions" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "questions" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "questions" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions" ORDER BY "questions"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (272.7ms)
+Completed 200 OK in 276ms (Views: 273.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:48:16 +0100
+Served asset /active_admin.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:48:16 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/admin/questions/5/edit" for 127.0.0.1 at 2013-04-25 00:48:24 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (141.8ms)
+Completed 200 OK in 146ms (Views: 143.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/admin/questions/5/edit" for 127.0.0.1 at 2013-04-25 00:48:24 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "5"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (81.4ms)
+Completed 200 OK in 85ms (Views: 82.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:48:25 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:48:25 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/6/edit" for 127.0.0.1 at 2013-04-25 00:49:03 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "6"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (105.3ms)
+Completed 200 OK in 109ms (Views: 106.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 00:49:03 +0100
+Served asset /active_admin.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 00:49:03 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/6/edit" for 127.0.0.1 at 2013-04-25 21:56:52 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.2ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "6"]]
+  [1m[36mQuestion Load (18.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (751.2ms)
+Completed 200 OK in 902ms (Views: 837.7ms | ActiveRecord: 19.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 21:56:53 +0100
+Served asset /active_admin.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 21:56:53 +0100
+Served asset /active_admin.js - 304 Not Modified (174ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 21:56:53 +0100
+Served asset /active_admin/print.css - 304 Not Modified (3ms)
+
+
+Started GET "/admin/questions" for 127.0.0.1 at 2013-04-25 21:56:55 +0100
+Processing by Admin::QuestionsController#index as HTML
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "questions" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "questions" 
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "questions" LIMIT 30 OFFSET 0) subquery_for_count [0m
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions" ORDER BY "questions"."id" desc LIMIT 30 OFFSET 0
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (433.6ms)
+Completed 200 OK in 476ms (Views: 448.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/sections/2" for 127.0.0.1 at 2013-04-25 21:56:58 +0100
+Processing by Admin::SectionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  [1m[35mExam Load (0.1ms)[0m  SELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = 'Section' AND "active_admin_comments"."resource_id" = '2' AND "active_admin_comments"."namespace" = 'admin'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = 'Section' AND "active_admin_comments"."resource_id" = '2' AND "active_admin_comments"."namespace" = 'admin'
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/show.html.arb (169.5ms)
+Completed 200 OK in 176ms (Views: 171.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 21:56:58 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 21:56:58 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 21:56:58 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/sections/2" for 127.0.0.1 at 2013-04-25 21:57:01 +0100
+Processing by Admin::SectionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = ? LIMIT 1  [["id", "2"]]
+  [1m[36mExam Load (0.2ms)[0m  [1mSELECT "exams".* FROM "exams" WHERE "exams"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = 'Section' AND "active_admin_comments"."resource_id" = '2' AND "active_admin_comments"."namespace" = 'admin'
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = 'Section' AND "active_admin_comments"."resource_id" = '2' AND "active_admin_comments"."namespace" = 'admin'[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/show.html.arb (49.4ms)
+Completed 200 OK in 53ms (Views: 51.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 21:57:01 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 21:57:01 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 21:57:01 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/7/edit" for 127.0.0.1 at 2013-04-25 21:57:07 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (111.8ms)
+Completed 200 OK in 116ms (Views: 113.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 21:57:07 +0100
+Served asset /active_admin.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 21:57:07 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 21:57:07 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/8/edit" for 127.0.0.1 at 2013-04-25 21:59:01 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "8"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 8]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (113.0ms)
+Completed 200 OK in 116ms (Views: 114.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 21:59:01 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 21:59:01 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 21:59:01 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/9/edit" for 127.0.0.1 at 2013-04-25 21:59:40 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "9"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 9]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (113.4ms)
+Completed 200 OK in 117ms (Views: 114.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 21:59:40 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 21:59:40 +0100
+Served asset /active_admin.css - 304 Not Modified (35ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 21:59:41 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/10/edit" for 127.0.0.1 at 2013-04-25 22:00:27 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "10"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 10]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (106.8ms)
+Completed 200 OK in 110ms (Views: 108.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:00:27 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:00:27 +0100
+Served asset /active_admin.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:00:27 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/11/edit" for 127.0.0.1 at 2013-04-25 22:01:11 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"11"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "11"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 11]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (108.3ms)
+Completed 200 OK in 112ms (Views: 109.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:01:11 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:01:11 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:01:11 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/12/edit" for 127.0.0.1 at 2013-04-25 22:01:55 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "12"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 12]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (109.8ms)
+Completed 200 OK in 113ms (Views: 111.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:01:55 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:01:55 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:01:55 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started PUT "/admin/questions/12" for 127.0.0.1 at 2013-04-25 22:02:41 +0100
+Processing by Admin::QuestionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8GaJl/hRXnQEWEb9O64gYPRF+Frc1n+SmoE9H/KjAOU=", "question"=>{"section_id"=>"2", "question_text"=>"How should you leave the customer?", "answer1"=>"With a business card and in the knowledge that if they have any queries or concerns they can call", "answer2"=>"With a business card and a selection of leaflets on all the service items on offer", "answer3"=>"With a business card and the idea that they might like to buy a new vehicle", "answer4"=>"With your mobile number and a selection of leaflets on all the service items on offer", "correct"=>"1", "order"=>"6"}, "commit"=>"Update Question", "id"=>"12"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "12"]]
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36mQuestion Exists (0.2ms)[0m  [1mSELECT 1 FROM "questions" WHERE (LOWER("questions"."question_text") = LOWER('How should you leave the customer?') AND "questions"."id" != 12) LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  UPDATE "questions" SET "answer3" = 'With a business card and the idea that they might like to buy a new vehicle', "updated_at" = '2013-04-25 21:02:41.536863' WHERE "questions"."id" = 12
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/admin/questions/12
+Completed 302 Found in 28ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/questions/12" for 127.0.0.1 at 2013-04-25 22:02:41 +0100
+Processing by Admin::QuestionsController#show as HTML
+  Parameters: {"id"=>"12"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "12"]]
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = 'Question' AND "active_admin_comments"."resource_id" = '12' AND "active_admin_comments"."namespace" = 'admin'[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "active_admin_comments" WHERE "active_admin_comments"."resource_type" = 'Question' AND "active_admin_comments"."resource_id" = '12' AND "active_admin_comments"."namespace" = 'admin'
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/show.html.arb (89.8ms)
+Completed 200 OK in 95ms (Views: 91.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:02:41 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:02:41 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:02:41 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions" for 127.0.0.1 at 2013-04-25 22:02:43 +0100
+Processing by Admin::QuestionsController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "questions" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "questions" [0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(count_column) FROM (SELECT 1 AS count_column FROM "questions" LIMIT 30 OFFSET 0) subquery_for_count 
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions" ORDER BY "questions"."id" desc LIMIT 30 OFFSET 0[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 2 LIMIT 1[0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 1 LIMIT 1[0m
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/index.html.arb (324.4ms)
+Completed 200 OK in 329ms (Views: 325.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:02:43 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:02:43 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:02:43 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/13/edit" for 127.0.0.1 at 2013-04-25 22:02:47 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "13"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 13]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (107.9ms)
+Completed 200 OK in 112ms (Views: 109.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:02:47 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:02:47 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:02:47 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/14/edit" for 127.0.0.1 at 2013-04-25 22:03:27 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "14"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 14]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (115.3ms)
+Completed 200 OK in 119ms (Views: 116.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:03:28 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:03:28 +0100
+Served asset /active_admin.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:03:28 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/15/edit" for 127.0.0.1 at 2013-04-25 22:04:11 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"15"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "15"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 15]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (107.2ms)
+Completed 200 OK in 111ms (Views: 108.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:04:12 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:04:12 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:04:12 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/16/edit" for 127.0.0.1 at 2013-04-25 22:04:54 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"16"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "16"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 16]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (111.9ms)
+Completed 200 OK in 115ms (Views: 113.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:04:54 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:04:54 +0100
+Served asset /active_admin.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:04:54 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/17/edit" for 127.0.0.1 at 2013-04-25 22:05:39 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "17"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 17]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (107.7ms)
+Completed 200 OK in 111ms (Views: 109.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:05:39 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:05:39 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:05:39 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/18/edit" for 127.0.0.1 at 2013-04-25 22:06:19 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"18"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "18"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 18]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 3 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (104.7ms)
+Completed 200 OK in 108ms (Views: 106.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:06:19 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:06:19 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:06:19 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/19/edit" for 127.0.0.1 at 2013-04-25 22:06:58 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "19"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 19]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (106.7ms)
+Completed 200 OK in 110ms (Views: 108.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:06:58 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:06:58 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:06:58 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/20/edit" for 127.0.0.1 at 2013-04-25 22:07:32 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "20"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 20]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (108.2ms)
+Completed 200 OK in 111ms (Views: 109.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:07:32 +0100
+Served asset /active_admin.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:07:32 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:07:32 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/21/edit" for 127.0.0.1 at 2013-04-25 22:08:25 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "21"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 21]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (109.0ms)
+Completed 200 OK in 112ms (Views: 110.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:08:25 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:08:25 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:08:25 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/22/edit" for 127.0.0.1 at 2013-04-25 22:09:07 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"22"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "22"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 22]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (107.5ms)
+Completed 200 OK in 111ms (Views: 108.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:09:07 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:09:07 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:09:07 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/23/edit" for 127.0.0.1 at 2013-04-25 22:09:52 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "23"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 23]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (110.4ms)
+Completed 200 OK in 114ms (Views: 111.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:09:52 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:09:52 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:09:52 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/24/edit" for 127.0.0.1 at 2013-04-25 22:10:40 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"24"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "24"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 24]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 4 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (116.4ms)
+Completed 200 OK in 120ms (Views: 117.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:10:40 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:10:40 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:10:40 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/25/edit" for 127.0.0.1 at 2013-04-25 22:11:18 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "25"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 25]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (106.3ms)
+Completed 200 OK in 110ms (Views: 107.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:11:18 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:11:18 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:11:18 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/26/edit" for 127.0.0.1 at 2013-04-25 22:12:02 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "26"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 26]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (133.6ms)
+Completed 200 OK in 137ms (Views: 135.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:12:02 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:12:02 +0100
+Served asset /active_admin.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:12:02 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/27/edit" for 127.0.0.1 at 2013-04-25 22:12:46 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"27"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "27"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 27]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (109.3ms)
+Completed 200 OK in 113ms (Views: 111.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:12:46 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:12:46 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:12:46 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/28/edit" for 127.0.0.1 at 2013-04-25 22:13:28 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"28"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "28"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 28]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (106.3ms)
+Completed 200 OK in 110ms (Views: 107.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:13:28 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:13:28 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:13:28 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/29/edit" for 127.0.0.1 at 2013-04-25 22:14:08 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"29"}
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1[0m
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", "29"]]
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", 29]]
+  [1m[35mSection Load (0.2ms)[0m  SELECT "sections".* FROM "sections" 
+  [1m[36mSection Load (0.1ms)[0m  [1mSELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1[0m
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (107.9ms)
+Completed 200 OK in 111ms (Views: 109.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:14:08 +0100
+Served asset /active_admin.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:14:08 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:14:08 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
+
+
+Started GET "/admin/questions/30/edit" for 127.0.0.1 at 2013-04-25 22:14:40 +0100
+Processing by Admin::QuestionsController#edit as HTML
+  Parameters: {"id"=>"30"}
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT "admin_users".* FROM "admin_users" WHERE "admin_users"."id" = 1 LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1[0m  [["id", "30"]]
+  [1m[35mQuestion Load (0.1ms)[0m  SELECT "questions".* FROM "questions" WHERE "questions"."id" = ? LIMIT 1  [["id", 30]]
+  [1m[36mSection Load (0.2ms)[0m  [1mSELECT "sections".* FROM "sections" [0m
+  [1m[35mSection Load (0.1ms)[0m  SELECT "sections".* FROM "sections" WHERE "sections"."id" = 5 LIMIT 1
+  Rendered /Users/tomblakey89/.rvm/gems/ruby-1.9.3-p392@rails3tutorial2ndEd/gems/activeadmin-0.5.1/app/views/active_admin/resource/edit.html.arb (113.0ms)
+Completed 200 OK in 117ms (Views: 114.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/active_admin.css?body=1" for 127.0.0.1 at 2013-04-25 22:14:40 +0100
+Served asset /active_admin.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/active_admin.js" for 127.0.0.1 at 2013-04-25 22:14:40 +0100
+Served asset /active_admin.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/active_admin/print.css?body=1" for 127.0.0.1 at 2013-04-25 22:14:40 +0100
+Served asset /active_admin/print.css - 304 Not Modified (0ms)
