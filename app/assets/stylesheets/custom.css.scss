@@ -24,6 +24,9 @@ html{
   height: 100%;
   font-family: arial, helvetica, sans-serif;
   color: $font;
+  background-image: url(../images/faux-column.png);
+  background-repeat: repeat-y;
+  background-position: left;
 }
 
 body{
