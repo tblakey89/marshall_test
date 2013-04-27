@@ -29,6 +29,7 @@ app = angular.module("Exam", ["ngResource"])
     $event.preventDefault()
 
   $scope.next = ($event) ->
+    #if $scope.begin isnt 6
     $scope.begin = $scope.begin + 1
     $event.preventDefault()
 
