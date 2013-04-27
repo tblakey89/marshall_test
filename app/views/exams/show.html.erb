@@ -3,13 +3,13 @@
 <% provide(:ng_controller, 'ng-controller=ExamCtrl') %>
 <% provide(:footer_class, 'ng-class=footerClass(0)') %>
 
-<div ng-hide="begin">
+<div ng-hide="begin" ng-animate="'fade'" class="other">
     <iframe id="iframeID" src="http://player.vimeo.com/video/" width="756" height="500" frameborder="0" webkitAllowFull    Screen mozallowfullscreen allowFullScreen></iframe>
   <a href="#" class="test_button" ng-click="beginSection($event)">Proceed To Questions</a>
   <div class="clear"></div>
 </div>
 <div ng-repeat="section in sections"  ng-class="testClass(section.name, section.video_id)">
-  <div ng-repeat="question in section.questions" ng-show="showQuestion(question.order)">
+  <div ng-repeat="question in section.questions" class="question" ng-animate="'fade'" ng-show="showQuestion(question.order)">
     <p class="questionText">{{question.question_text}}</p>
     <div class="answer" ng-click="answerQuestion(question.order, 1)" ng-class="answered(question.order, 1)">
       <div class="answer_status_incomplete"></div>
@@ -38,9 +38,10 @@
     <a href="#" class="test_button" ng-hide="sectionCompleteBool(0)" ng-click="next($event)">Next Question</a>
     <a href="#" class="test_button" ng-show="sectionCompleteBool(0)" ng-click="next($event)">Finish Section</a>
   </div>
+  <div class="clear"></div>
 </div>
 
-<div class="results" ng-show="showQuestion(7)">
+<div class="results" ng-animate="'fade'" ng-show="showQuestion(7)">
   <div class="results_left" ng-repeat="section in sections">
     <div ng-repeat="question in section.questions" ng-class="answerCorrect(question.order, question.correct)">
       <div class="result">
@@ -67,7 +68,7 @@
   </div>
   <div class="clear"></div>
 </div>
-<div class="theEnd" ng-show="endOfTest(0)">
+<div class="theEnd" ng-animate="'fade'" ng-show="endOfTest(0)">
   <div class="outcomePass"></div>
   <p>Congratulations, you have finished the test!</p>
   <a href="/" class="test_button">End Test</a>

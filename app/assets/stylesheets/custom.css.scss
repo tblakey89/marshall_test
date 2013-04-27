@@ -121,6 +121,10 @@ aside{
   }
 }
 
+.question{
+  height: 594px;
+}
+
 .questionText{
   height: 42px;
 }
@@ -148,6 +152,8 @@ aside{
 	border-top: 2px $border solid;
 	border-left: 2px $border solid;
 	border-right: 2px $border solid;
+	max-height: 578px;
+	overflow:hidden;
 	p{
 	  font-size: 18px;
 	}
@@ -408,6 +414,36 @@ form{
   p{
     text-align: center;
   }
+}
+
+.fade-hide-setup {
+  -webkit-transition:0.5s linear;
+  -moz-transition:0.5s linear;
+  -o-transition:0.5s linear;
+  transition:0.5s linear;
+}
+.fade-show-setup{
+  -webkit-transition:1s linear 0.5s;
+  -moz-transition:1s linear 0.5s;
+  -o-transition:1s linear 0.5s;
+  transition:1s linear 0.5s;
+}
+.fade-hide-setup {
+  opacity:1;
+}
+.fade-hide-setup.fade-hide-start {
+  opacity:0;
+}
+
+.fade-show-setup {
+  opacity:0;
+}
+.fade-show-setup.fade-show-start {
+  opacity:1;
+}
+
+.theEnd, .results, .other{
+  height: 614px;
 }
 
 .clear{

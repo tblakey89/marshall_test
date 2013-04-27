@@ -7,7 +7,7 @@ app = angular.module("Exam", ["ngResource"])
   Entry4 = $resource("/sections/4.json", {id: "@id"}, {update: {method: "PUT"}})
   Entry5 = $resource("/sections/5.json", {id: "@id"}, {update: {method: "PUT"}})
   $scope.sections = Entry.query()
-
+#need reload video button
   $scope.current = 1
   $scope.answer = []
   $scope.correct = []
