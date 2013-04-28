@@ -3,7 +3,7 @@
 <% provide(:ng_controller, 'ng-controller=ExamCtrl') %>
 <% provide(:footer_class, 'ng-class=footerClass(0)') %>
 
-<div ng-hide="begin" ng-animate="'fade'" class="other">
+<div ng-init="setUser(<%= current_user.id %>)" ng-hide="begin" ng-animate="'fade'" class="other">
     <iframe id="iframeID" src="http://player.vimeo.com/video/" width="756" height="500" frameborder="0" webkitAllowFull    Screen mozallowfullscreen allowFullScreen></iframe>
   <a href="#" class="test_button" ng-click="beginSection($event)">Proceed To Questions</a>
   <div class="clear"></div>
@@ -35,8 +35,8 @@
         <h3>{{question.answer4}}</h3>
       </div>
     </div>
-    <a href="#" class="test_button" ng-hide="sectionCompleteBool(0)" ng-click="next($event)">Next Question</a>
-    <a href="#" class="test_button" ng-show="sectionCompleteBool(0)" ng-click="next($event)">Finish Section</a>
+    <a href="#" class="test_button" ng-hide="sectionCompleteBool(0) || begin == 6" ng-click="next($event)">Next Question</a>
+    <a href="#" class="test_button" ng-show="sectionCompleteBool(0)" ng-click="finishSection($event)">Finish Section</a>
   </div>
   <div class="clear"></div>
 </div>

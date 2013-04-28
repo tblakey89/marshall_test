@@ -8,7 +8,7 @@
       <p>{{answeredQuestion(t)}}</p>
     </div>
   </div>
-  <div ng-hide="endOfTest(0)" ng-class="sectionComplete(0)" class="last" ng-click="finishSection(0)">
+  <div ng-hide="endOfTest(0)" ng-class="sectionComplete(0)" class="last" ng-click="finishSection($event)">
     <h6>Section</h6>
     <p>{{sectionComplete(0)}}</p>
   </div>

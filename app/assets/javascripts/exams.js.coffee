@@ -1,6 +1,6 @@
 app = angular.module("Exam", ["ngResource"])
 
-@ExamCtrl = ($scope, $resource) ->
+@ExamCtrl = ($scope, $resource, $http) ->
   Entry = $resource("/sections/1.json", {id: "@id"}, {update: {method: "PUT"}})
   Entry2 = $resource("/sections/2.json", {id: "@id"}, {update: {method: "PUT"}})
   Entry3 = $resource("/sections/3.json", {id: "@id"}, {update: {method: "PUT"}})
@@ -15,7 +15,12 @@ app = angular.module("Exam", ["ngResource"])
   $scope.begin = 0
   $scope.name = ''
   $scope.video = ''
+  $scope.method = "POST"
+
   document.getElementById('iframeID').src = "http://player.vimeo.com/video/64311295"
+
+  $scope.setUser = (id) ->
+    $scope.user = id
 
   $scope.testClass = (theName, theVideo) ->
     $scope.video_id = theVideo
@@ -28,9 +33,14 @@ app = angular.module("Exam", ["ngResource"])
     $scope.video = true
     $event.preventDefault()
 
+  $scope.finishSection = ($event) ->
+    if $scope.sectionCompleteBool(0)
+      $scope.begin = 7
+    $event.preventDefault()
+
   $scope.next = ($event) ->
-    #if $scope.begin isnt 6
-    $scope.begin = $scope.begin + 1
+    if $scope.begin isnt 6
+      $scope.begin = $scope.begin + 1
     $event.preventDefault()
 
   $scope.showQuestion = (id) ->
@@ -65,13 +75,17 @@ app = angular.module("Exam", ["ngResource"])
       return 'incomplete'
 
   $scope.sectionComplete = (id) ->
-    if $scope.answer.length == 7
+    if $scope.sectionCompleteBool(0)
       return 'complete'
     else
       return 'incomplete'
 
   $scope.sectionCompleteBool = (id) ->
-    return $scope.answer.length == 7
+    answered = 0
+    for answer in $scope.answer
+      if answer isnt undefined
+        answered = answered + 1
+    return answered == 6
 
   $scope.answerCorrect = (id, correct) ->
     if $scope.answer[id] == correct
@@ -81,10 +95,6 @@ app = angular.module("Exam", ["ngResource"])
       $scope.incorrect = $scope.incorrect + 1
       $scope.correct[id] = false
       return 'incorrect'
-
-  $scope.finishSection = (id) ->
-    if $scope.answer.length == 7
-      $scope.begin = 7
 
   $scope.sectionOutcome = (id) ->
     pass = 0
@@ -111,6 +121,8 @@ app = angular.module("Exam", ["ngResource"])
     $event.preventDefault()
 
   $scope.nextSection = ($event) ->
+    for key, value of $scope.answer
+      $scope.add(key, value, $scope.user)
     $scope.answer = []
     $scope.correct = []
     $scope.video = false
@@ -139,3 +151,20 @@ app = angular.module("Exam", ["ngResource"])
 
   $scope.showCtrl = (id) ->
     return true
+
+  $scope.add = (question, answer, user) ->
+    FormData =
+      question_id: question
+      answer: answer
+      user_id: user
+    $http(
+      method: $scope.method
+      url: "user_answers/new"
+      data: FormData
+      headers:
+        "Content-Type": "application/x-www-form-urlencoded"
+      #cache: $templateCache
+    ).success((response) ->
+      $scope.codeStatus = response.data
+    ).error (response) ->
+      $scope.codeStatus = response or "Request failed"
