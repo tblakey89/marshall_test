@@ -1,5 +1,7 @@
 SkyOfComics::Application.routes.draw do
 
+  get "user_answers/create"
+
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -17,6 +19,7 @@ SkyOfComics::Application.routes.draw do
   resources :questions
   resources :sections
   resources :exams, only: [ :show]
+  resources :user_answers, only: [ :create]
 
   root to: 'static_pages#home'
 

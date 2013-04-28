@@ -156,13 +156,13 @@ app = angular.module("Exam", ["ngResource"])
     FormData =
       question_id: question
       answer: answer
-      user_id: user
+      user_id: user*current
     $http(
       method: $scope.method
-      url: "user_answers/new"
+      url: "../user_answers"
       data: FormData
-      headers:
-        "Content-Type": "application/x-www-form-urlencoded"
+      #headers:
+        #  "Content-Type": "application/x-www-form-urlencoded"
       #cache: $templateCache
     ).success((response) ->
       $scope.codeStatus = response.data
