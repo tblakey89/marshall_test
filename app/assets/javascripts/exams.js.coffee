@@ -22,64 +22,76 @@ app = angular.module("Exam", ["ngResource"])
   $scope.setUser = (id) ->
     $scope.user = id
 
+  #sets the video to the first video_id, sets the name, and returns the css class
   $scope.testClass = (theName, theVideo) ->
     $scope.video_id = theVideo
     $scope.name = theName
     document.getElementById('iframeID').src = "http://player.vimeo.com/video/" + theVideo
     return 'test'
 
+  #begins the section and sets video to watched
   $scope.beginSection = ($event) ->
     $scope.begin = $scope.begin + 1
     $scope.video = true
     $event.preventDefault()
 
+  #finishes the section
   $scope.finishSection = ($event) ->
     if $scope.sectionCompleteBool(0)
       $scope.begin = 7
     $event.preventDefault()
 
+  #moves it onto the next section
   $scope.next = ($event) ->
     if $scope.begin isnt 6
       $scope.begin = $scope.begin + 1
     $event.preventDefault()
 
+  #shows the current question
   $scope.showQuestion = (id) ->
     if id == $scope.begin
       return true
     else
       return false
 
+  #go to selected question
   $scope.goToQuestion = (id) ->
     if $scope.video and  $scope.begin isnt  7
       $scope.begin = id
 
+  #answers the current question
   $scope.answerQuestion = (id, answer) ->
     $scope.answer[id] = answer
 
+  #checks to see of question is answered
   $scope.answered = (id, answer) ->
     if $scope.answer[id] == answer
       return 'answer_status_answered'
     else
       return ''
 
+  #checks if video is watched
   $scope.videoWatched = (id) ->
     if $scope.video
       return 'complete'
     else
       return 'incomplete'
 
+  #checks if question is answered, returns class
   $scope.answeredQuestion = (id) ->
     if $scope.answer[id] != undefined
       return 'complete'
     else
       return 'incomplete'
 
+  #returns a class depending on section complete boolean
   $scope.sectionComplete = (id) ->
     if $scope.sectionCompleteBool(0)
       return 'complete'
     else
       return 'incomplete'
 
+  #returns true or false based on whether the section is complete
   $scope.sectionCompleteBool = (id) ->
     answered = 0
     for answer in $scope.answer
@@ -87,6 +99,7 @@ app = angular.module("Exam", ["ngResource"])
         answered = answered + 1
     return answered == 6
 
+  #checks to see if answer is correct, returns string
   $scope.answerCorrect = (id, correct) ->
     if $scope.answer[id] == correct
       $scope.correct[id] = true
@@ -96,6 +109,7 @@ app = angular.module("Exam", ["ngResource"])
       $scope.correct[id] = false
       return 'incorrect'
 
+  #returns the outcome of the section, pass of fail
   $scope.sectionOutcome = (id) ->
     pass = 0
     if $scope.sectionCompleteBool(0)
@@ -107,12 +121,14 @@ app = angular.module("Exam", ["ngResource"])
       else
         return false
 
+  #returns status of section
   $scope.sectionStatus = (id) ->
     if $scope.section[id]
       return 'complete'
     else
       return 'incomplete'
 
+  #restarts the section and sends answers to server
   $scope.repeatSection = ($event) ->
     for key, value of $scope.answer
       $scope.add(key, value, $scope.user)
@@ -122,6 +138,7 @@ app = angular.module("Exam", ["ngResource"])
     $scope.begin = 0
     $event.preventDefault()
 
+  #goes to next section and sends answers to server
   $scope.nextSection = ($event) ->
     for key, value of $scope.answer
       $scope.add(key, value, $scope.user)
@@ -139,21 +156,25 @@ app = angular.module("Exam", ["ngResource"])
       when 5 then $scope.sections = Entry5.query()
       when 6 then $scope.begin = 8
 
+  #ends the test
   $scope.endOfTest = (id) ->
     if $scope.begin == 8
       $scope.sections = ''
       $scope.name = 'Complete'
       return true
 
+  #shows the footer class based on the situation
   $scope.footerClass = (id) ->
     if $scope.begin == 8
       return 'container_footer'
     else
       return 'footer_sections'
 
+  #used in ng-hide and shows
   $scope.showCtrl = (id) ->
     return true
 
+  #adds the answers to the database
   $scope.add = (question, answer, user) ->
     FormData =
       question_id: question
