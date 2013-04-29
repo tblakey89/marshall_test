@@ -56,7 +56,6 @@ describe "UserPages" do
         let(:user) { User.find_by_email('example@user.com') }
 
         it { should have_selector('title', text: exam.name ) }
-        it { should have_selector('h3', text: section.name) }
       end
     end
   end

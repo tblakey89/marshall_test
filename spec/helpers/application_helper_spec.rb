@@ -8,7 +8,7 @@ describe ApplicationHelper do
     end
 
     it "should contain the base title" do
-      full_title("foo").should =~ /Sky of Comics/
+      full_title("foo").should =~ /Marshall/
     end
 
     it "should not contain a | on the home page" do

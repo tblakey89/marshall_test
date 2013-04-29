@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130423213807) do
+ActiveRecord::Schema.define(:version => 20130429214342) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -89,7 +89,6 @@ ActiveRecord::Schema.define(:version => 20130423213807) do
   end
 
   add_index "user_answers", ["question_id"], :name => "index_user_answers_on_question_id"
-  add_index "user_answers", ["user_id", "question_id"], :name => "index_user_answers_on_user_id_and_question_id", :unique => true
   add_index "user_answers", ["user_id"], :name => "index_user_answers_on_user_id"
 
   create_table "users", :force => true do |t|

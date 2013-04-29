@@ -114,6 +114,8 @@ app = angular.module("Exam", ["ngResource"])
       return 'incomplete'
 
   $scope.repeatSection = ($event) ->
+    for key, value of $scope.answer
+      $scope.add(key, value, $scope.user)
     $scope.answer = []
     $scope.correct = []
     $scope.video = false
@@ -156,7 +158,7 @@ app = angular.module("Exam", ["ngResource"])
     FormData =
       question_id: question
       answer: answer
-      user_id: user*current
+      user_id: user*$scope.current
     $http(
       method: $scope.method
       url: "../user_answers"

@@ -9,14 +9,6 @@ describe UserAnswer do
 
   it { should be_valid }
 
-  describe "accessable attributes" do
-    it "should not allow access to user_id" do
-      expect do
-        UserAnswer.new(user_id: user.id)
-      end.should raise_error(ActiveModel::MassAssignmentSecurity::Error)
-    end
-  end
-
   describe "relation methods" do
     it { should respond_to(:user) }
     it { should respond_to(:question) }
