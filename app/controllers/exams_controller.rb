@@ -3,8 +3,16 @@ class ExamsController < ApplicationController
   after_filter  :set_csrf_cookie_for_ng
 
   def show
-    @exam = Exam.find(params[ :id])
-    @section = @exam.sections.first
+    if session[:auth] == true
+      if signed_in?
+        @exam = Exam.find(params[ :id])
+        @section = @exam.sections.first
+      else
+        redirect_to new_user_path
+      end
+    else
+      redirect_to root_path
+    end
   end
 
   def set_csrf_cookie_for_ng

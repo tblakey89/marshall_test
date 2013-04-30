@@ -9,4 +9,10 @@ module ApplicationHelper
     end
   end
 
+  def auth_check()
+    if session[:auth] = true
+      redirect_to root_path
+    end
+  end
+
 end

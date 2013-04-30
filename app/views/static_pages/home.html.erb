@@ -1,5 +1,26 @@
 <% provide(:title, "Home") %>
 <% provide(:heading, "Instructions") %>
 <% provide(:footer_class, "class=container_footer") %>
+<% provide(:contentAlt, "introContent")%>
 
-<%= link_to "Enter Details", signup_path, :class=> "test_button" %>
+<h1>After Sales Customer Journey Training</h1>
+
+<div class="imageHolder">
+  <img src="images/landing.png" alt="After Sales Customer Journey Training"/>
+</div>
+
+<p class="intro">Welcome to the After Sales Customer Journey Training. The test is made up of 5 sections each comprising of 1 short video clip followed by 6 multiple choice questions. The video will provide you with all the information necessary to successfully answer all the questions correctly.</p>
+
+<p class="intro">Before the test begins you will be required to enter your details.</p>
+
+<p class="intro">Good Luck!</p>
+
+<p class="intro">Please enter the password to continue:</p>
+
+<%= form_for(:static_pages, url: root_path) do |f| %>
+  <div class="password_line">
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.submit "Sign In", class: "test_button" %>
+  </div>
+<% end %>

@@ -3,12 +3,16 @@ class UsersController < ApplicationController
   before_filter :correct_user, only: [ :edit, :update]
 
   def create
-    @user = User.new(params[ :user])
-    if @user.save
-      user_sign_in @user
-      redirect_to exam_path(1)
+    if session[:auth] == true
+      @user = User.new(params[ :user])
+      if @user.save
+        user_sign_in @user
+        redirect_to exam_path(1)
+      else
+        render 'new'
+      end
     else
-      render 'new'
+      redirect_to root_path
     end
   end
 
@@ -17,7 +21,11 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
+    if session[:auth] == true
+      @user = User.new
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
