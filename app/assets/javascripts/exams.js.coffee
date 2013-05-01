@@ -132,7 +132,7 @@ app = angular.module("Exam", ["ngResource"])
   $scope.repeatSection = ($event) ->
     for key, value of $scope.answer
       $scope.add(key, value, $scope.user)
-    $scope.answer = []
+    $scope.answer.length = 0
     $scope.correct = []
     $scope.video = false
     $scope.begin = 0
@@ -142,7 +142,7 @@ app = angular.module("Exam", ["ngResource"])
   $scope.nextSection = ($event) ->
     for key, value of $scope.answer
       $scope.add(key, value, $scope.user)
-    $scope.answer = []
+    $scope.answer.length = 0
     $scope.correct = []
     $scope.video = false
     $event.preventDefault()
@@ -177,7 +177,7 @@ app = angular.module("Exam", ["ngResource"])
   #adds the answers to the database
   $scope.add = (question, answer, user) ->
     FormData =
-      question_id: question*$scope.current
+      question_id: parseInt(question) + (6*($scope.current - 1))
       answer: answer
       user_id: user
     $http(
@@ -190,4 +190,4 @@ app = angular.module("Exam", ["ngResource"])
     ).success((response) ->
       $scope.codeStatus = response.data
     ).error (response) ->
-      $scope.codeStatus = response or "Request failed"
+      $scope.add(question, answer, user)
