@@ -8,7 +8,7 @@ ActiveAdmin.register User do
     end
 
     panel "Questions" do
-      table_for UserAnswer.find(:all, :conditions => "user_id=" + user.id.to_s, :group => "question_id") do |t|
+      table_for UserAnswer.find(:all, conditions: "user_id=" + user.id.to_s, select: "distinct question_id, answer", order: "question_id") do |t|
         t.column("Question") { |user_answer| user_answer.question.question_text }
         t.column("Answer") { |user_answer| status_tag (user_answer.answer == user_answer.question.correct ? "Correct" : "Incorrect")}
         t.column("Attempts") { |user_answer| UserAnswer.count(:conditions => "question_id =" + user_answer.question_id.to_s + " AND user_id=" + user.id.to_s)}

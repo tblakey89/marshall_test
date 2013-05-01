@@ -177,9 +177,9 @@ app = angular.module("Exam", ["ngResource"])
   #adds the answers to the database
   $scope.add = (question, answer, user) ->
     FormData =
-      question_id: question
+      question_id: question*$scope.current
       answer: answer
-      user_id: user*$scope.current
+      user_id: user
     $http(
       method: $scope.method
       url: "../user_answers"
