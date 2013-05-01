@@ -1,4 +1,16 @@
 ActiveAdmin.register User do
+  config.comments = false
+
+  filter :username
+  filter :email
+
+  index do
+    column :username
+    column :email
+    column :created_at
+    default_actions
+  end
+
   show do
     panel "User Details" do
       attributes_table_for user do
@@ -9,6 +21,7 @@ ActiveAdmin.register User do
 
     panel "Questions" do
       table_for UserAnswer.find(:all, conditions: "user_id=" + user.id.to_s, select: "DISTINCT ON (question_id) *", order: "question_id") do |t|
+      #table_for UserAnswer.find(:all, conditions: "user_id=" + user.id.to_s, group: "question_id", order: "question_id") do |t|
         t.column("Question") { |user_answer| user_answer.question.question_text }
         t.column("Answer") { |user_answer| status_tag (user_answer.answer == user_answer.question.correct ? "Correct" : "Incorrect")}
         t.column("Attempts") { |user_answer| UserAnswer.count(:conditions => "question_id =" + user_answer.question_id.to_s + " AND user_id=" + user.id.to_s)}

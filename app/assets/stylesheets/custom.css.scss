@@ -372,6 +372,20 @@ form{
 	color: $border-answered;
 	background-color: $answered;
   }
+  .incomplete{
+    border-left: 2px solid $border;
+	border-top: 2px solid $border;
+	border-bottom: 2px solid $border;
+	color: $border;
+	background-color: $incomplete;
+  }
+  .current{
+  	border-left: 2px solid $border-correct;
+	border-top: 2px solid $border-correct;
+	border-bottom: 2px solid $border-correct;
+	color: $border-correct;
+	background-color: $correct;
+  }
   .last.incomplete{
     border-right: 2px solid $border;
   }

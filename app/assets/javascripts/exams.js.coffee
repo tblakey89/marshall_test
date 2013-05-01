@@ -24,9 +24,10 @@ app = angular.module("Exam", ["ngResource"])
 
   #sets the video to the first video_id, sets the name, and returns the css class
   $scope.testClass = (theName, theVideo) ->
-    $scope.video_id = theVideo
+    if $scope.video_id isnt theVideo
+      $scope.video_id = theVideo
+      document.getElementById('iframeID').src = "http://player.vimeo.com/video/" + $scope.video_id
     $scope.name = theName
-    document.getElementById('iframeID').src = "http://player.vimeo.com/video/" + theVideo
     return 'test'
 
   #begins the section and sets video to watched
@@ -72,14 +73,18 @@ app = angular.module("Exam", ["ngResource"])
 
   #checks if video is watched
   $scope.videoWatched = (id) ->
-    if $scope.video
+    if $scope.begin == 0
+      return 'current'
+    else if $scope.video
       return 'complete'
     else
       return 'incomplete'
 
   #checks if question is answered, returns class
   $scope.answeredQuestion = (id) ->
-    if $scope.answer[id] != undefined
+    if $scope.begin == id
+      return 'current'
+    else if $scope.answer[id] != undefined
       return 'complete'
     else
       return 'incomplete'

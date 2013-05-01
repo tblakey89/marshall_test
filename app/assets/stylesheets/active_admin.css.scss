@@ -35,3 +35,6 @@ body.active_admin .status_tag.correct{
 body.active_admin .status_tag.incorrect{
   background-color: #e74c3c;
 }
+body.active_admin form textarea {
+  height: 100px;
+}
