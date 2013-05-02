@@ -1,9 +1,10 @@
 FactoryGirl.define do
   factory :user do
-    sequence(:username) { |n| "tblakey#{n}" }
+    sequence(:first_name) { |n| "thomas#{n}" }
+    sequence(:last_name) { |n| "blakey#{n}" }
     sequence(:email) { |n| "tomblakey#{n}@googlemail.com" }
-    password "foobar"
-    password_confirmation "foobar"
+    dealership_id 1
+    job_title "Test Job"
   end
 
   factory :question do

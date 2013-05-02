@@ -10,15 +10,12 @@ describe "UserPages" do
     it { should have_selector('title', text: full_title('Enter Details')) }
   end
 
-  describe "Profile page" do
-    let(:user) { FactoryGirl.create(:user) }
-    before { visit user_path(user) }
-
-    it { should have_selector('h1', text: user.username) }
-    it { should have_selector('title', text: user.username) }
-  end
-
   describe "signup" do
+    before do
+      visit root_path
+      fill_in "password", with: "password"
+      click_button submit
+    end
     before { visit signup_path }
     let(:submit) { "Begin Test" }
 
@@ -37,10 +34,12 @@ describe "UserPages" do
 
     describe "with valid information" do
       before do
-        fill_in "Username", with: "exampleuser"
+        Dealership.new(name: "Test Town").save
+        fill_in "first_name", with: "example"
+        fill_in "last_name", with: "user"
         fill_in "Email", with: "example@user.com"
-        fill_in "Password", with: "foobar"
-        fill_in "Confirmation", with: "foobar"
+        fill_in "job_title", with: "Test job"
+        select "Test Town", from: "Dealership"
       end
       let(:exam) { FactoryGirl.create(:exam) }
       before { exam.save }

@@ -5,8 +5,13 @@
 <%= form_for(@user) do |f| %>
   <%= render 'shared/error_messages' %>
   <div class="field_line">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+
+  <div class="field_line">
+    <%= f.label :last_name%>
+    <%= f.text_field :last_name%>
   </div>
 
   <div class="field_line">
@@ -15,13 +20,13 @@
   </div>
 
   <div class="field_line">
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <%= f.label :job_title %>
+    <%= f.text_field :job_title %>
   </div>
 
   <div class="field_line">
-    <%= f.label :password_confirmation, "Confirmation" %>
-    <%= f.password_field :password_confirmation %>
+    <%= f.label :dealership %>
+    <%= f.collection_select(:dealership_id, Dealership.all, :id, :name, { prompt: true }) %>
   </div>
 
   <div class="field_line">

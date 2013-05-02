@@ -1,12 +1,18 @@
 ActiveAdmin.register User do
   config.comments = false
 
-  filter :username
+  filter :first_name
+  filter :last_name
+  filter :dealership
+  filter :job_title
   filter :email
 
   index do
-    column :username
+    column :first_name
+    column :last_name
     column :email
+    column :job_title
+    column :dealership
     column :created_at
     default_actions
   end
@@ -14,8 +20,11 @@ ActiveAdmin.register User do
   show do
     panel "User Details" do
       attributes_table_for user do
-        row("username") { user.username }
+        row("first_name") { user.first_name }
+        row("last_name") { user.last_name }
         row("email") { user.email }
+        row("job_title") { user.job_title }
+        row("dealership") { user.dealership }
       end
     end
 

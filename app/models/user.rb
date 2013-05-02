@@ -14,21 +14,21 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :aboutme, :dateofbirth, :email, :username, :password, :password_confirmation
+  attr_accessible :first_name, :last_name, :email, :dealership_id, :job_title
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
 
   has_many :user_answers, dependent: :destroy
   has_many :questions, through: :user_answers
+  belongs_to :dealership
 
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :username, presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
+  validates :first_name, presence: true
+  validates :last_name, presence: true
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-  validates :password, presence: true, length: { minimum: 6 }
-  validates :password_confirmation, presence: true
-
-  has_secure_password
+  validates :job_title, presence: true
+  validates :dealership_id, presence: true
 
   def answered?(the_question)
     user_answers.find_by_question_id(the_question.id)
