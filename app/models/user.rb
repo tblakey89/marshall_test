@@ -14,7 +14,7 @@
 #
 
 class User < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :email, :dealership_id, :job_title
+  attr_accessible :first_name, :last_name, :email, :dealership_id, :job_title, :time_taken, :score
 
   before_save { |user| user.email = email.downcase }
   before_save :create_remember_token
@@ -44,6 +44,16 @@ class User < ActiveRecord::Base
 
   def answered_correct?(the_question)
     user_answers.find_by_question_id(the_question.id).answer == questions.find(the_question.id).correct
+  end
+
+  def the_time
+    if !self.time_taken.nil?
+      current_time = self.time_taken/1000
+      seconds = current_time % 60
+      minutes = (current_time / 60) % 60
+      hours = (current_time/3600)
+      hours.to_s + ":" + format("%02d",minutes.to_s) + ":" + format("%02d",seconds.to_s)
+    end
   end
 
   private

@@ -29,4 +29,9 @@ class Question < ActiveRecord::Base
   validates :answer4, presence: true
   validates :correct, presence: true
   validates :section_id, presence: true
+
+  validates_numericality_of :correct, only_integer: true, allow_nil: true,
+    :greater_than_or_equal_to => 1,
+    :less_than_or_equal_to => 4,
+    :message => "can only be whole number between 1 and 4."
 end

@@ -1,4 +1,4 @@
-app = angular.module("Exam", ["ngResource"])
+pp = angular.module("Exam", ["ngResource"])
 
 @ExamCtrl = ($scope, $resource, $http) ->
   Entry = $resource("/sections/1.json", {id: "@id"}, {update: {method: "PUT"}})
@@ -16,6 +16,8 @@ app = angular.module("Exam", ["ngResource"])
   $scope.name = ''
   $scope.video = ''
   $scope.method = "POST"
+  $scope.beginning = Date.now()
+  $scope.score = 0
 
   document.getElementById('iframeID').src = "http://player.vimeo.com/video/64311295"
 
@@ -126,6 +128,14 @@ app = angular.module("Exam", ["ngResource"])
       else
         return false
 
+  #returns score of the section
+  $scope.sectionScore = (id) ->
+    pass = 0
+    for correct in $scope.correct
+      if correct
+        pass = pass + 1
+    return pass
+
   #returns status of section
   $scope.sectionStatus = (id) ->
     if $scope.section[id]
@@ -147,6 +157,7 @@ app = angular.module("Exam", ["ngResource"])
   $scope.nextSection = ($event) ->
     for key, value of $scope.answer
       $scope.add(key, value, $scope.user)
+    $scope.score += $scope.sectionScore(0)
     $scope.answer.length = 0
     $scope.correct = []
     $scope.video = false
@@ -154,6 +165,8 @@ app = angular.module("Exam", ["ngResource"])
     $scope.section[$scope.current] = true
     $scope.current = $scope.current + 1
     $scope.begin = 0
+    if $scope.current == 6
+      $scope.time_taken = Math.abs($scope.beginning - Date.now())
     switch $scope.current
       when 2 then $scope.sections = Entry2.query()
       when 3 then $scope.sections = Entry3.query()
@@ -179,6 +192,10 @@ app = angular.module("Exam", ["ngResource"])
   $scope.showCtrl = (id) ->
     return true
 
+  #submits the user's score and time to the server
+  $scope.submitScore = ($event) ->
+    $scope.addToUser(0)
+
   #adds the answers to the database
   $scope.add = (question, answer, user) ->
     FormData =
@@ -189,10 +206,22 @@ app = angular.module("Exam", ["ngResource"])
       method: $scope.method
       url: "../user_answers"
       data: FormData
-      #headers:
-        #  "Content-Type": "application/x-www-form-urlencoded"
-      #cache: $templateCache
     ).success((response) ->
       $scope.codeStatus = response.data
     ).error (response) ->
       $scope.add(question, answer, user)
+
+  #adds user score to user
+  $scope.addToUser = (id) ->
+    FormData =
+      score: $scope.score
+      time_taken: $scope.time_taken
+      id: $scope.user
+    $http(
+      method: "PUT"
+      url: "../users/" + $scope.user
+      data: FormData
+    ).success((response) ->
+      $scope.codeStatus = response.data
+    ).error (response) ->
+      $scope.addToUser(0)

@@ -265,14 +265,17 @@ form{
 	    background-color: $input_error;
 	  }
 	}
-	input{
+	input, select{
 	  float: right;
 	  padding: 5px;
 	  border-radius: 3px;
 	  border: 1px $border solid;
 	}
+	select{
+	  margin: 0px 10px 0px 10px;
+	  width: 258px;
+	}
 	input[type=submit]{
-	  margin-left: 143px;
 	  float: none;
 	}
 	width: 400px;
