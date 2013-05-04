@@ -33,7 +33,7 @@ ActiveAdmin.register User do
     end
 
     panel "Questions" do
-     table_for UserAnswer.find(:all, conditions: "user_id=" + user.id.to_s, select: "DISTINCT ON (question_id) *", order: "question_id created_at desc") do |t|
+     table_for UserAnswer.find(:all, conditions: "user_id=" + user.id.to_s, select: "DISTINCT ON (question_id) *", order: "question_id, created_at desc") do |t|
      #table_for UserAnswer.find(:all, conditions: "user_id=" + user.id.to_s, group: "question_id", order: "question_id") do |t|
         t.column("Question") { |user_answer| link_to user_answer.question.question_text, admin_question_path(user_answer.question) }
         t.column("Answer") { |user_answer| status_tag (user_answer.answer == user_answer.question.correct ? "Correct" : "Incorrect")}
