@@ -8,6 +8,7 @@ gem 'activeadmin'
 gem 'active_model_serializers', "~> 0.1.0"
 gem "active_model_serializers-matchers", "~> 0.1.1"
 gem "yui_reset_rails", "~> 1.0.1"
+gem 'jwplayer-rails'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
