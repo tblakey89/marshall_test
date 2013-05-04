@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130504171409) do
+ActiveRecord::Schema.define(:version => 20130504172056) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -101,15 +101,15 @@ ActiveRecord::Schema.define(:version => 20130504171409) do
 
   create_table "users", :force => true do |t|
     t.string   "email"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
     t.string   "remember_token"
     t.integer  "dealership_id"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "job_title"
-    t.integer  "score",          :limit => 255
     t.integer  "time_taken"
+    t.integer  "score"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
