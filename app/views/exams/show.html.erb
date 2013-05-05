@@ -4,7 +4,28 @@
 <% provide(:footer_class, 'ng-class=footerClass(0)') %>
 
 <div ng-init="setUser(<%= current_user.id %>)" ng-hide="begin" ng-animate="'fade'" class="other">
-    <iframe id="iframeID" src="http://player.vimeo.com/video/" width="756" height="500" frameborder="0" webkitAllowFull    Screen mozallowfullscreen allowFullScreen></iframe>
+  <div id="myElement">Loading the player ...</div>
+<!--  <script type="text/javascript">
+    jwplayer("myElement").setup({
+      height: 500,
+      width: 765,
+      autostart: true,
+      icons: false,
+      playlist: [{ file: "/videos/1.mp4"}],
+      events: {
+        onComplete: function(){
+          // get Angular scope from the known DOM element
+          e = document.getElementById('exam');
+          scope = angular.element(e).scope();
+          scope.$apply(function() {
+            scope.video = true;
+            scope.goToQuestion(1);
+          });
+        }
+      }
+    });
+</script>-->
+  <div ng-init="setUpVideo(0)"></div>
   <a href="#" class="test_button" ng-click="beginSection($event)">Proceed To Questions</a>
   <div class="clear"></div>
 </div>

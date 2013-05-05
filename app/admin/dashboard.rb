@@ -4,7 +4,7 @@ ActiveAdmin.register_page "Dashboard" do
 
   ActiveAdmin::Dashboards.build do
     section "Dealership Scores" do
-      table_for Dealership.find(:all, select: "dealerships.name, avg(users.score) as average_score, avg(users.time_taken) as average_time", limit: 10, joins: :users, order: 'average_score') do |t|
+      table_for Dealership.find(:all, select: "dealerships.name, dealerships.id, avg(users.score) as average_score, avg(users.time_taken) as average_time", limit: 10, joins: :users, order: 'average_score') do |t|
         t.column ("Dealership") { |dealership| link_to dealership.name, admin_dealership_path(dealership) }
         t.column ("Average Score") { |dealership| dealership.average_score }
         t.column ("Average Time") { |dealership| dealership.to_time(dealership.average_time) }

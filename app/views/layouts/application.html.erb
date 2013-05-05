@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html ng-app="Exam">
+<html ng-app="Exam" id="exam">
 <head>
   <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <%= javascript_include_tag "application" %>
   <%= render 'layouts/shim' %>
 </head>
 <body <%= yield(:ng_controller) %>>

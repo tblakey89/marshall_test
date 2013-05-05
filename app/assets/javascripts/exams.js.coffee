@@ -1,4 +1,4 @@
-pp = angular.module("Exam", ["ngResource"])
+app = angular.module("Exam", ["ngResource"])
 
 @ExamCtrl = ($scope, $resource, $http) ->
   Entry = $resource("/sections/1.json", {id: "@id"}, {update: {method: "PUT"}})
@@ -19,16 +19,30 @@ pp = angular.module("Exam", ["ngResource"])
   $scope.beginning = Date.now()
   $scope.score = 0
 
-  document.getElementById('iframeID').src = "http://player.vimeo.com/video/64311295"
-
   $scope.setUser = (id) ->
     $scope.user = id
+
+  $scope.setUpVideo = (id) ->
+    jwplayer("myElement").setup
+      height: 500
+      width: 765
+      autostart: true
+      icons: false
+      file: "/videos/1.mp4"
+      events:
+        onComplete: ->
+          $scope.$apply ->
+            $scope.video = true
+            $scope.begin = $scope.begin + 1
+
+  $scope.restartVideo = (id) ->
+    jwplayer().stop()
+    jwplayer().play()
 
   #sets the video to the first video_id, sets the name, and returns the css class
   $scope.testClass = (theName, theVideo) ->
     if $scope.video_id isnt theVideo
       $scope.video_id = theVideo
-      document.getElementById('iframeID').src = "http://player.vimeo.com/video/" + $scope.video_id
     $scope.name = theName
     return 'test'
 
@@ -61,6 +75,9 @@ pp = angular.module("Exam", ["ngResource"])
   $scope.goToQuestion = (id) ->
     if $scope.video and  $scope.begin isnt  7
       $scope.begin = id
+      if id is 0
+        $scope.restartVideo(0)
+        $scope.video = false
 
   #answers the current question
   $scope.answerQuestion = (id, answer) ->
@@ -152,6 +169,7 @@ pp = angular.module("Exam", ["ngResource"])
     $scope.video = false
     $scope.begin = 0
     $event.preventDefault()
+    $scope.restartVideo(0)
 
   #goes to next section and sends answers to server
   $scope.nextSection = ($event) ->
@@ -165,6 +183,8 @@ pp = angular.module("Exam", ["ngResource"])
     $scope.section[$scope.current] = true
     $scope.current = $scope.current + 1
     $scope.begin = 0
+    jwplayer().load [file: "/videos/" + $scope.current  + ".mp4"]
+    jwplayer().play()
     if $scope.current == 6
       $scope.time_taken = Math.abs($scope.beginning - Date.now())
     switch $scope.current
