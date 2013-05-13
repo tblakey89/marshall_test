@@ -26,7 +26,7 @@
 
   <div class="field_line">
     <%= f.label :dealership %>
-    <%= f.collection_select(:dealership_id, Dealership.all, :id, :name, { prompt: true }) %>
+    <%= f.collection_select(:dealership_id, Dealership.order('name asc'), :id, :name, { prompt: true } ) %>
   </div>
 
   <div class="field_line">

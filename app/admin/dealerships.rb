@@ -1,8 +1,15 @@
 ActiveAdmin.register Dealership do
   filter :name
+  config.sort_order = "name_asc"
 
   index do
     column :name
+    column 'Average Score' do |dealership|
+      dealership.users.average('score')
+    end
+    column 'Average Time Taken' do |dealership|
+      dealership.to_time(dealership.users.average('time_taken'))
+    end
     default_actions
   end
 
