@@ -8,18 +8,6 @@ ActiveAdmin.register User do
   filter :job_title
   filter :email
 
-  batch_action :remove_incomplete_users, confirm: "Deleting incomplete users will affect users currently taking the test?" do |user|
-    current = User.find_by_id(user)
-    if current.score.nil? and current.time_taken.nil?
-      current.destroy
-    end
-  end
-
-  controller do
-    #def delete_all
-    #end
-  end
-
   index do
     selectable_column
     column :first_name
