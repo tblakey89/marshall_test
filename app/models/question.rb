@@ -34,4 +34,17 @@ class Question < ActiveRecord::Base
     :greater_than_or_equal_to => 1,
     :less_than_or_equal_to => 4,
     :message => "can only be whole number between 1 and 4."
+
+  def correct_answer
+    case self.correct
+    when 1
+      return self.answer1
+    when 2
+      return self.answer2
+    when 3
+      return self.answer3
+    when 4
+      return self.answer4
+    end
+  end
 end

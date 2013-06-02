@@ -133,6 +133,16 @@ app = angular.module("Exam", ["ngResource"])
       $scope.correct[id] = false
       return 'incorrect'
 
+  #checks to see if answer is correct, returns bool
+  $scope.answerCorrectBool = (id, correct) ->
+    if $scope.answer[id] == correct
+      $scope.correct[id] = true
+      return true
+    else
+      $scope.incorrect = $scope.incorrect + 1
+      $scope.correct[id] = false
+      return false
+
   #returns the outcome of the section, pass of fail
   $scope.sectionOutcome = (id) ->
     pass = 0
@@ -216,6 +226,10 @@ app = angular.module("Exam", ["ngResource"])
   $scope.submitScore = ($event) ->
     $scope.addToUser(0)
 
+  $scope.heightControl = (id) ->
+    if $scope.sectionCompleteBool(0)
+      return 'no-height'
+
   #adds the answers to the database
   $scope.add = (question, answer, user) ->
     FormData =
@@ -245,3 +259,7 @@ app = angular.module("Exam", ["ngResource"])
       $scope.codeStatus = response.data
     ).error (response) ->
       $scope.addToUser(0)
+
+    $scope.displayNone = (id) ->
+      if $scope.begin is 8
+        return "hidden"

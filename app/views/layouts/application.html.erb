@@ -15,7 +15,7 @@
       <h3><%= yield(:heading)%></h3>
       <p><%= yield(:time)%></p>
     </div>
-    <div class="container_contents <%= yield(:contentAlt)%>">
+    <div class="container_contents <%= yield(:contentAlt)%>" <%= yield(:classAlt)%>>
       <%= yield %>
     </div>
     <div <%= yield(:footer_class) %>>
