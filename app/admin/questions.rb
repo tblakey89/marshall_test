@@ -47,6 +47,7 @@ ActiveAdmin.register Question do
       f.input :answer1
       f.input :answer2
       f.input :answer3
+      f.input :answer4
       f.input :correct
     end
     f.actions
