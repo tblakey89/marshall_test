@@ -17,7 +17,9 @@ ActiveAdmin.register User do
     column :dealership
     column :created_at
     column :score
-    column "Time Taken", :the_time
+    column "Time Taken" do |user|
+      user.the_time
+    end
     default_actions
   end
 
