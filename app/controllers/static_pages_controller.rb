@@ -16,4 +16,7 @@ class StaticPagesController < ApplicationController
 
   end
 
+  def blitz_auth
+  end
+
 end
