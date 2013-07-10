@@ -2,7 +2,7 @@ class StaticPagesController < ApplicationController
 
   def home
     if params[:static_pages]
-      if params[:static_pages][:password] == "password"
+      if params[:static_pages][:password] == Password.find_by_id(1).password
         session[:auth] = true
         redirect_to new_user_path
       end
