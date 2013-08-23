@@ -209,6 +209,7 @@ app = angular.module("Exam", ["ngResource"])
     if $scope.begin == 8
       $scope.sections = ''
       $scope.name = 'Complete'
+      $scope.addToUser(0)
       return true
 
   #shows the footer class based on the situation

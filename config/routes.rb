@@ -14,8 +14,6 @@ SkyOfComics::Application.routes.draw do
 
   get "questions/new"
 
-  get '/mu-f02d10a1-3f94c9e6-13b8c9dc-55111af7' => "static_pages#blitz_auth"
-
   resources :users
   resources :sessions, only: [ :new, :create, :destroy]
   resources :questions
