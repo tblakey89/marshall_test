@@ -202,14 +202,15 @@ app = angular.module("Exam", ["ngResource"])
       when 3 then $scope.sections = Entry3.query()
       when 4 then $scope.sections = Entry4.query()
       when 5 then $scope.sections = Entry5.query()
-      when 6 then $scope.begin = 8
+      when 6
+        $scope.begin = 8
+        $scope.addToUser(0)
 
   #ends the test
   $scope.endOfTest = (id) ->
     if $scope.begin == 8
       $scope.sections = ''
       $scope.name = 'Complete'
-      $scope.addToUser(0)
       return true
 
   #shows the footer class based on the situation
